@@ -33,4 +33,19 @@ Nodemon - add on to node
             import express
             const router = express.Router();
             and then router.get, router.push, router. put. router.delete
+                the new paths for these are add ons to "path" in app.use
             export default router;
+
+    * Another Path Update:
+        - then you move the function declarations to another file
+            export them
+            import the functions in the noteroutes
+
+    *** Generally
+    While you can define all your functions for REST(post, push, put, delete) into one
+    file, its cleaner to split things up
+    Steps:
+        move paths to a separate folder
+        move functions to another folder
+        for paths, call it with the functions
+        back in the main file, you do app.use("path to paths", router_name)
