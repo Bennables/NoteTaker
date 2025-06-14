@@ -25,3 +25,12 @@ API: application programming interface, allows two apps to talk to each other
 Nodemon - add on to node
     reloads site on change
 
+* Updating Paths:
+    - because get,post,put,delete can get long, we move it to a diff file.
+        in server, instead, we import that file, and then do
+            app.use("path", file)
+        in the new file
+            import express
+            const router = express.Router();
+            and then router.get, router.push, router. put. router.delete
+            export default router;
