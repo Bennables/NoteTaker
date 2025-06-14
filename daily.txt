@@ -1,0 +1,8 @@
+Fixing everything up today 6/13
+    installing node, express, starting template
+    installing chatgpt, shortcut issues that I don't want to figure out
+        chat will be used for explaining concepts
+        I refuse to use autocomplete
+    Let's get it!
+    
+

@@ -1,0 +1,4 @@
+6/13
+- in package.json, must set "type": "module" 
+    - to use import x from "x"
+    - otherwise, u have to use const x = require("x")
