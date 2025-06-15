@@ -49,3 +49,19 @@ Nodemon - add on to node
         move functions to another folder
         for paths, call it with the functions
         back in the main file, you do app.use("path to paths", router_name)
+
+when you move files around, you have to change the paths in package.json'
+
+sql / nosql
+
+sql has table, rows/cols
+less flexible
+uses sql
+best for complex queries/relational data
+
+
+nosql = json/key+value
+query language
+bigdata(quick updates/big)
+
+
