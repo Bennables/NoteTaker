@@ -65,3 +65,5 @@ query language
 bigdata(quick updates/big)
 
 
+.env has to be in the working directory
+to connect, export a connection function

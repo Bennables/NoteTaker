@@ -13,6 +13,6 @@ app.use("/api/notes", noteRoutes);
 
 connectDB();
 
-app.listen(5001, () =>{
-    console.log("Started connection port: 5001");
+app.listen(PORT, () =>{
+    console.log("Started connection port: ", PORT);
 })
