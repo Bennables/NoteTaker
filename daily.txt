@@ -6,3 +6,10 @@ Fixing everything up today 6/13
     Let's get it!
     
 
+6/15
+connected the database to my program
+    learned how to use ENV so that we can hide keys
+    created a schema for each Note 
+    updated the get request
+
+6/16

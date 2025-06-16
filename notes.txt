@@ -67,3 +67,10 @@ bigdata(quick updates/big)
 
 .env has to be in the working directory
 to connect, export a connection function
+
+REST operations
+each function has req and res
+req.body has jsons that u push with it, try in postman
+but to get a note, Note(the class).find()
+specific id: Note.find(req.params.id);
+look at the file for more
