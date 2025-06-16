@@ -3,7 +3,8 @@ import Note from "../models/Note.js"
 export const getNote = async (req, res) => {
     
     try {
-        const notes = await Note.find();
+        //                                             need to put in quotes, vid didn't
+        const notes = await Note.find().sort({createdAt : "-1"});
         console.log(notes);
         res.status(200).json(notes);
 
@@ -44,7 +45,29 @@ export const putNote = async (req, res) => {
     }
 }
 
-export const deleteNote = (req, res) => {
-    res.status(203).send("Deleted the note")
+export const deleteNote = async(req, res) => {
+    try {
+        const deleted = await Note.findByIdAndDelete(req.params.id);
+        if(!deleted){return res.status(404).json({message: "That note was not found"})};
+        res.status(200).json({message: "note deleted successfully"});
+    } catch (error) {
+        console.log("Failed to delete the note");
+        res.status(500).json({message: "Couldn't delete the note"});
+    }
 }
 
+
+
+export const getNoteByID = async (req, res) =>{
+    try {
+        const note = await Note.findById(req.params.id);
+        if (!note){
+            return res.status(404).json({message: "Note was unable to be found"});
+        }
+        res.status(200).json(note);
+    } catch (error) {
+        console.log("Failed to get the note");
+        res.status(500).json({message: "Couldn't get the note"});
+    }
+    
+}
