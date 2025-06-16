@@ -2,7 +2,6 @@
 
 import mongoose from "mongoose";
 
-
 // since this is a nosql database, we use json format
 // code is self explanatory
 const noteSchema = new mongoose.Schema(
