@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import './input.css'
 import App from './App.jsx'
 // just learned this. importing in the curly brackets gets specifically what you're importing
 // if there's only one thing in module, then you can just import
