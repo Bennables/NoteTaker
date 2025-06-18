@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
 import daisyui from 'daisyui'
+/** @type {import('tailwindcss').Config} */
+
 
 module.exports = {
   content: [
@@ -9,6 +10,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('daisyui'),
+    daisyui,
   ],
+  daisyui: {
+    themes: ["forest"],
+  },
 }

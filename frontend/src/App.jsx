@@ -10,13 +10,17 @@ import "./input.css"
 
 const App = () => {
   return (
-    <div>
+    <div data-theme = "forest">
+      
       <p> THIS IS THE MAIN PAGEasdfasdf </p>
       {/* this part creates the links to other pages */}
       {/* {()=>toast.success("JFDLFKSJLDFJDLK")} */}
-      <button onClick={() => toast.success("congrats")} className="text-red-500 p-4 bg-pink-300">CLICK HERERRRR</button>
+      <button onClick={() => toast.success("congrats")} className="btn">CLICK HERERRRR</button>
       <button onClick={() => toast.error("congrats")}>CLICK HERERRRR</button>
-      <p className="text-green-500 text-2xl font-bold">TAILWIND TEST</p>
+      <button class="btn btn-primary">One</button>
+      <button class="btn btn-secondary">Two</button>
+      <button class="btn btn-accent btn-outline">Three</button>
+      <p className="btn">TAILWIND TEST</p>
       <Routes>
         <Route path = "/" element={<HomePage />}> </Route>
         <Route path = '/create' element = {<CreatePage />}></Route>
