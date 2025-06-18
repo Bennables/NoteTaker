@@ -13,7 +13,7 @@ router.put("/:id", putNote);
 
 router.delete("/:id" , deleteNote);
 
-router.get("/:id", getNoteByID);
+router.get("/:id", getNoteByID );
 
 
 export default router;

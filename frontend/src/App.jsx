@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router'
 import NoteDetailPage from './Pages/NoteDetailPage'
 import CreatePage from "./Pages/CreatePage"
 import {toast} from 'react-hot-toast';
-import "./inpust.css"
+import "./input.css"
 
 
 const App = () => {
