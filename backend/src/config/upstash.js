@@ -10,4 +10,4 @@ const rateLimit = new Ratelimit({
     limiter: Ratelimit.slidingWindow(10, '10 s'),
 });
 
-export default rateLimit
+export default rateLimit;

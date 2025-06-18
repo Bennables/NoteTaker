@@ -32,8 +32,7 @@ app.use((req, res, next) =>{
 
 app.use("/api/notes", noteRoutes);
 
-connectDB();
-
+await connectDB();
 app.listen(PORT, () =>{
     console.log("Started connection port: ", PORT);
 })

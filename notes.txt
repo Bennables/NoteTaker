@@ -74,3 +74,6 @@ req.body has jsons that u push with it, try in postman
 but to get a note, Note(the class).find()
 specific id: Note.find(req.params.id);
 look at the file for more
+
+
+rate limiting - you know what it is
