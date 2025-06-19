@@ -2,7 +2,10 @@ import React from 'react'
 
 const CreatePage = () => {
   return (
-    <div>CreatePage</div>
+    <div>CreatePage
+      <p> HFDFJSDF</p>
+    </div>
+    
   )
 }
 
