@@ -77,3 +77,8 @@ look at the file for more
 
 
 rate limiting - you know what it is
+
+There are notes on useState and useEffect. High quality in frontend/src/Pages/HomePage
+A lot of changes, UI is very easy and fast if you practice.
+tailwind and daisy UI are saving my life
+

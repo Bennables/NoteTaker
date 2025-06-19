@@ -1,5 +1,0 @@
-To create a frontend
-in main dir: npm create vite
-    put a folder name
-npm i react-router
-npm i react-hot-toast

@@ -12,4 +12,11 @@ connected the database to my program
     created a schema for each Note 
     updated the get request
 
-6/16
+6/18
+the backend got finished some time ago. It's cool, but I'm scared that I'm
+forgetting things already. I'm going to finish the project in two days, and
+then I'll review the code, and I'll be off to the races.
+
+Components are reused, they just export themselves
+pages are pages, you just gotta import routing into it and make it look nice
+IT's EASY, JUST GOTTA PRACTICE
