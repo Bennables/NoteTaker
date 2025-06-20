@@ -2,8 +2,53 @@ import React from 'react'
 import { Link } from 'react-router'
 import { PenSquareIcon, Trash2Icon } from 'lucide-react'
 import { formatDate } from '../utils/utils'
+import api from "../lib/axios"
 
-const NoteCard = ({ note }) => {
+/*
+onst handleSubmit = async (e) => {
+    //on submissions, it'll refresh page
+    e.preventDefault();
+
+    //otherwise internal server error
+    if (!title || !content){
+      toast.error("fill in all the fields!");
+      return
+    }
+
+    setLoading(true)
+    try {
+      console.log("TRYING");
+      await api.post("/notes",{
+        title, content
+      });
+      toast.success("Note created successfully");
+      navigate("/")
+    } catch (error) {
+      toast.error("failed to create")
+      if(error.responst.status === 429){
+        toast.error("You're creating notes too fast");
+      }
+
+*/
+
+
+
+const NoteCard = ({ note, setNotes }) => {
+
+
+    const handleDelete = async(e, id) =>{
+        e.preventDefault();
+        try {
+            await api.delete(`/notes/${id}`);
+            setNotes((prev)=>prev.filter(note=> note._id !== id));
+            console.log("Successfully deleted the node");
+        } catch (error) {
+            toast.error("We couldn't delete the node");
+            console.log("We couldn't delete the node");
+        }
+        
+        
+    }   
     return (
         <Link to={`/note/${note._id}`}
             className="card bg-base-100 hover: shadow-lg transition-all duration-200
@@ -16,7 +61,7 @@ const NoteCard = ({ note }) => {
                 <div className="flex items-center gap-1">
                 <PenSquareIcon className="size-4" />
                 <button className="btn btn-ghost btn-xs text-error">
-                <Trash2Icon className="size-4" />
+                <Trash2Icon className="size-4" onClick={(e)=>handleDelete(e, note._id)}/>
                 </button>
             </div>
         
@@ -25,9 +70,6 @@ const NoteCard = ({ note }) => {
         
     </div>
      </Link>
-
-
-
 
     )}
 export default NoteCard

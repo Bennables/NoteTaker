@@ -43,7 +43,7 @@ const HomePage = () => {
         // const res = await fetch("localhost:5001/api/notes");
         // const data = await res.json();
 
-        const res = await api.get("")
+        const res = await api.get("/notes")
         console.log(res.data);
         setNotes(res.data);
         setIsRateLimited(false);
@@ -72,7 +72,7 @@ const HomePage = () => {
         {notes.length > 0 && !isRateLimited && (
           <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {notes.map(note => (
-              <NoteCard key={note._id} note={note}/>
+              <NoteCard key={note._id} note={note} setNotes={setNotes}/>
               // <div>
               //   {note.title} | {note.content}
               // </div>
