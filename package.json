@@ -1,8 +1,22 @@
 {
-  "devDependencies": {
-    "daisyui": "^5.0.43"
+  "name": "notetaker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+    
   },
-  "dependencies": {
-    "cors": "^2.8.5"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bennables/NoteTaker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bennables/NoteTaker/issues"
+  },
+  "homepage": "https://github.com/Bennables/NoteTaker#readme",
+  "description": ""
 }

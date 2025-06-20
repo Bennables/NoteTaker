@@ -4,17 +4,24 @@ import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
 import rateLimiter from "./middleware/rateLimiter.js"
 import cors from "cors"
+import path from "path"
 
 dotenv.config();
 const PORT = process.env.PORT || 5001;
 
 const app = express();
+const __dirname = path.resolve()
+
 console.log(process.env.CONNECTION)
 
-app.use(
+
+if (process.env.NODE_ENV !== "production"){
+    app.use(
     //allows ports to connect, off by default
     cors()
 )
+}
+
 //allows use to get req.body
 app.use(express.json());
 
@@ -38,6 +45,17 @@ app.use((req, res, next) =>{
 })
 
 app.use("/api/notes", noteRoutes);
+
+
+
+if (process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname, "../frontend/dist")))
+    
+    // this is for any other path
+    app.get("*", (req, res)=>{
+        res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+    })
+}
 
 await connectDB();
 app.listen(PORT, () =>{
