@@ -13,7 +13,7 @@ import NoteCard from './Components/NoteCard'
 
 const App = () => {
   return (
-    <div data-theme = "forest">
+    <div data-theme = "forest" className='relative h-full w-full'>
       {/* this part creates the links to other pages */}
       <button onClick={() => toast.success("congrats")} className="btn">CLICK HERERRRR</button>
       <button onClick={() => toast.error("congrats")}>CLICK HERERRRR</button>
