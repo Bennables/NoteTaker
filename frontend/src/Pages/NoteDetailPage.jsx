@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react'
 import api from "../lib/axios"
 import toast from 'react-hot-toast';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useParams } from 'react-router';
+import { LoaderIcon, ArrowLeftIcon, Trash2Icon } from 'lucide-react';
+import { Link } from 'react-router';
+import { redirect } from 'react-router';
+
 
 const NoteDetailPage = () => {
   const [note, setNote] = useState("");
@@ -12,24 +19,27 @@ const NoteDetailPage = () => {
   const { id } = useParams(); // this one is important
 
 
-  useEffect(async() =>{
+  useEffect(() =>{
   //this one should load the page,
   //define note, chagne loading
+    const load = async () => {
+      try {
+        const data = await api.get(`/notes/${id}`);
+        setNote(data);
+        console.log("successfully retrieved the note");
+      } catch (error) {
+        console.log("Failed to retrieve note from server" + error);
+        toast.error("Failed to retrieve note from server");
+      } finally{
+        setLoading(false);
+      };
 
-    try {
-      const data = await api.get(`/notes/${id}`);
-      setNote(data);
-      console.log("successfully retrieved the note")
-    } catch (error) {
-      console.log("Failed to retrieve note from server" + error);
-      toast.error("Failed to retrieve note from server");
-    } finally{
-      setLoading(false);
-    }
+    };
+  load();
+}, []);
 
-  })
 
-  const handleDelete = async() =>{
+  const handleDelete = async(e) =>{
     e.preventDefault();
     try {
         await api.delete(`/notes/${id}`);
@@ -41,6 +51,10 @@ const NoteDetailPage = () => {
     }
   }
   const handleSave = async() =>{
+    if (!note.title || !note.content){
+      toast.error("Please add a title or content");
+      return;
+    }
     if (!note.title.trim() || !note.content.trim()) {
       toast.error("Please add a title or content");
       return;

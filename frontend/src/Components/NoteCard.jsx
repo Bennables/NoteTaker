@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import { PenSquareIcon, Trash2Icon } from 'lucide-react'
 import { formatDate } from '../utils/utils'
 import api from "../lib/axios"
+import { redirect } from 'react-router'
 
 /*
 onst handleSubmit = async (e) => {
@@ -46,7 +47,7 @@ const NoteCard = ({ note, setNotes }) => {
             toast.error("We couldn't delete the node");
             console.log("We couldn't delete the node");
         }
-        
+        redirect("/")
         
     }   
     return (
